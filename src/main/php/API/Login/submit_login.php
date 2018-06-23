@@ -11,14 +11,14 @@ $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
 
 Debug('DEBUG', 'Validating required arguments');
-if($email=='') {
+if ($email == '') {
     Debug('DEBUG', 'Email empty, returning fail.');
     echo json_encode(array('return_code'=>0, 'return_message'=>'Please enter Email.'));
-    exit();
-} else if($password=='') {
+    die();
+} else if ($password=='') {
     Debug('DEBUG', 'Password empty, returning fail.');
     echo json_encode(array('return_code'=>0, 'return_message'=>'Please enter Password.'));
-    exit();
+    die();
 }
 
 Debug('DEBUG', 'Running logic');
@@ -26,5 +26,4 @@ Debug('DEBUG', 'Running logic');
 
 Debug('DEBUG', 'Done');
 echo json_encode(array('return_code'=>1, 'return_message'=>'Success'));
-exit();
 ?>
