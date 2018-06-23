@@ -10,6 +10,7 @@ header('application/json');
 
 if($_REQUEST['debug']!='') {
     header('text/plain');
+    Debug('DEBUG', 'Start');
 }
 
 function Debug($tag, $message) {
