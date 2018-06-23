@@ -4,7 +4,7 @@
  * File: submit_login.php
  * Description: Validate the given credentials and sign in the user
  */
-include_once('../../include/common.php');
+include_once('../../../include/common.php');
 
 Debug('DEBUG', 'Getting arguments');
 $email = $_REQUEST['email'];

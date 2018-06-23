@@ -12,7 +12,7 @@ if($_REQUEST['debug']!='') {
     header('text/plain');
 }
 
-function debug($tag, $message) {
+function Debug($tag, $message) {
     if($_REQUEST['debug']!='') {
         echo "[".date("Y-m-d H:i:s")."] $tag - $message"
     }
