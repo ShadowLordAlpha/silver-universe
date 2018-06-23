@@ -15,7 +15,7 @@ if($_REQUEST['debug']!='') {
 
 function Debug($tag, $message) {
     if($_REQUEST['debug']!='') {
-        echo "[".date("Y-m-d H:i:s")."] $tag - $message";
+        echo "[".date("Y-m-d H:i:s")."] $tag - $message\n";
     }
 }
 ?>
