@@ -6,10 +6,10 @@
  */
 set_time_limit(120);
 
-header('application/json');
+header('Content-Type: application/json');
 
 if($_REQUEST['debug']!='') {
-    header('text/plain');
+    header('Content-Type: text/plain');
     Debug('DEBUG', 'Start');
 }
 
