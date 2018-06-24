@@ -7,8 +7,8 @@
 include_once('../../include/common.php');
 
 Debug('DEBUG', 'Getting arguments');
-$email = $_REQUEST['email'];
-$password = $_REQUEST['password'];
+$email = mysqli_real_escape_string($conn, $_REQUEST['email']);
+$password = mysqli_real_escape_string($conn, $_REQUEST['password']);
 
 Debug('DEBUG', 'Validating required arguments');
 if ($email == '') {
@@ -23,6 +23,8 @@ if ($email == '') {
 
 Debug('DEBUG', 'Running logic');
 // TODO: Actually code proper logic for this
+$checkLogin = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+mysqli_query($conn, $checkLogin) or die(mysqli_error($conn));
 
 Debug('DEBUG', 'Done');
 echo json_encode(array('return_code'=>1, 'return_message'=>'Success'));

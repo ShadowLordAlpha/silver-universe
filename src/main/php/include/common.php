@@ -6,6 +6,8 @@
  */
 set_time_limit(120);
 
+include_once('database_connection.php');
+
 header('Content-Type: application/json');
 
 if($_REQUEST['debug']!='') {
